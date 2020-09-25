@@ -55,7 +55,7 @@ export class UserResolver {
         return {
           errors: [
             {
-              field: "Username",
+              field: "username",
               message:
                 "Couldn't find user with that username, please try logging in again",
             },
@@ -128,13 +128,13 @@ export class UserResolver {
     const user = await em.findOne(User, { username });
     if (!user) {
       return {
-        errors: [{ field: "Username", message: "Invalid login." }],
+        errors: [{ field: "username", message: "Invalid login." }],
       };
     }
     const valid = await argon2.verify(user.password, password);
     if (!valid) {
       return {
-        errors: [{ field: "Password", message: "Invalid login." }],
+        errors: [{ field: "password", message: "Invalid login." }],
       };
     }
 
