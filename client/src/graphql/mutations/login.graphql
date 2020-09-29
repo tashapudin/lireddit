@@ -5,10 +5,7 @@ mutation Login($loginInput: UsernamePasswordInput!) {
       field
     }
     user {
-      id
-      createdAt
-      username
-      updatedAt
+      ...RegularUser
     }
   }
 }

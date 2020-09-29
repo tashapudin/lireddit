@@ -1,8 +1,7 @@
 query currentUser {
   currentUser {
     user {
-      username
-      id
+      ...RegularUser
     }
   }
 }
